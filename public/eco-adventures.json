@@ -1,0 +1,234 @@
+[
+    {
+        "id": 1,
+        "title": "Himalayan Mountain Trek",
+        "image": "https://i.ibb.co.com/7k5K0zw/himalayan-mountain-trek.jpg",
+        "category": "Mountain Treks",
+        "shortDescription": "Experience the thrill of trekking through the majestic Himalayan range, surrounded by breathtaking views.",
+        "adventureCost": 1500,
+        "bookingAvailability": true,
+        "location": "Nepal",
+        "duration": "10 days",
+        "adventureLevel": "Advanced",
+        "includedItems": [
+            "Guide",
+            "Camping Gear",
+            "Meals",
+            "First Aid Kit"
+        ],
+        "ecoFriendlyFeatures": [
+            "Zero Waste Policy",
+            "Reusable Water Bottles",
+            "Eco-friendly Camping Sites"
+        ],
+        "maxGroupSize": 12,
+        "specialInstructions": [
+            "Ensure physical fitness before booking.",
+            "Carry thermal clothing as temperatures can drop significantly.",
+            "Respect local customs and wildlife."
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Amazon Rainforest Expedition",
+        "image": "https://i.ibb.co.com/N7Zchy5/amazon-rainforest-expedition.jpg",
+        "category": "Forest Expeditions",
+        "shortDescription": "Discover the rich biodiversity of the Amazon rainforest with expert guides on a sustainable journey.",
+        "adventureCost": 2200,
+        "bookingAvailability": true,
+        "location": "Brazil",
+        "duration": "7 days",
+        "adventureLevel": "Intermediate",
+        "includedItems": [
+            "Guide",
+            "Accommodation",
+            "Meals",
+            "Boat Tours"
+        ],
+        "ecoFriendlyFeatures": [
+            "Low Impact Footprint",
+            "Biodegradable Toiletries",
+            "Support Local Communities"
+        ],
+        "maxGroupSize": 8,
+        "specialInstructions": [
+            "Wear insect repellent and long-sleeve clothing.",
+            "Be prepared for humid and rainy conditions.",
+            "Follow the guide's instructions to protect the ecosystem."
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Great Barrier Reef Diving",
+        "image": "https://i.ibb.co.com/NFL6GmF/great-barrier-reef-diving.jpg",
+        "category": "Ocean Dives",
+        "shortDescription": "Explore the vibrant marine life of the Great Barrier Reef on an eco-friendly diving expedition.",
+        "adventureCost": 1800,
+        "bookingAvailability": false,
+        "location": "Australia",
+        "duration": "5 days",
+        "adventureLevel": "Beginner",
+        "includedItems": [
+            "Diving Gear",
+            "Instructor",
+            "Meals",
+            "Underwater Photography"
+        ],
+        "ecoFriendlyFeatures": [
+            "Reef-Safe Sunscreen",
+            "Marine Life Conservation",
+            "No Plastic Policy"
+        ],
+        "maxGroupSize": 10,
+        "specialInstructions": [
+            "Must be able to swim.",
+            "Do not touch or disturb marine life.",
+            "Avoid using chemical-based sunscreens."
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Sahara Desert Camping",
+        "image": "https://i.ibb.co.com/rHW8fhQ/sahara-desert-camping.jpg",
+        "category": "Desert Exploration",
+        "shortDescription": "Experience the vast beauty of the Sahara desert with eco-friendly camping under the stars.",
+        "adventureCost": 1300,
+        "bookingAvailability": true,
+        "location": "Morocco",
+        "duration": "4 days",
+        "adventureLevel": "Beginner",
+        "includedItems": [
+            "Camel Ride",
+            "Tents",
+            "Meals",
+            "Desert Guide"
+        ],
+        "ecoFriendlyFeatures": [
+            "Solar-Powered Lighting",
+            "Zero Plastic Usage",
+            "Eco-Friendly Toilets"
+        ],
+        "maxGroupSize": 15,
+        "specialInstructions": [
+            "Pack lightweight and breathable clothing.",
+            "Stay hydrated and carry a reusable water bottle.",
+            "Avoid leaving any waste behind."
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Everglades Mangrove Kayaking",
+        "image": "https://i.ibb.co.com/PFttTWs/everglades-mangrove-kayaking.jpg",
+        "category": "River Adventures",
+        "shortDescription": "Paddle through the lush mangroves of the Everglades and witness unique wildlife.",
+        "adventureCost": 900,
+        "bookingAvailability": true,
+        "location": "Florida, USA",
+        "duration": "2 days",
+        "adventureLevel": "Intermediate",
+        "includedItems": [
+            "Kayak",
+            "Life Jacket",
+            "Guide",
+            "Snacks"
+        ],
+        "ecoFriendlyFeatures": [
+            "No Motorboats",
+            "Reusable Utensils",
+            "Wildlife Conservation"
+        ],
+        "maxGroupSize": 6,
+        "specialInstructions": [
+            "Bring a hat and sunscreen.",
+            "Wear water-resistant footwear.",
+            "Do not disturb the wildlife."
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Alaskan Wildlife Safari",
+        "image": "https://i.ibb.co.com/dcYCRV2/alaskan-wildlife-safari.jpg",
+        "category": "Wildlife Safaris",
+        "shortDescription": "Witness the incredible wildlife of Alaska, from grizzly bears to bald eagles, in a sustainable safari.",
+        "adventureCost": 2500,
+        "bookingAvailability": true,
+        "location": "Alaska, USA",
+        "duration": "6 days",
+        "adventureLevel": "Intermediate",
+        "includedItems": [
+            "Guide",
+            "Binoculars",
+            "Meals",
+            "Transport"
+        ],
+        "ecoFriendlyFeatures": [
+            "Electric Vehicles",
+            "Eco-Lodges",
+            "Leave No Trace Policy"
+        ],
+        "maxGroupSize": 10,
+        "specialInstructions": [
+            "Dress warmly with layers.",
+            "Bring binoculars and a camera.",
+            "Respect wildlife viewing guidelines."
+        ]
+    },
+    {
+        "id": 7,
+        "title": "Andes Mountain Camping Retreat",
+        "image": "https://i.ibb.co.com/BrVXnGt/andes-mountain-camping-retreat.jpg",
+        "category": "Camping Retreats",
+        "shortDescription": "Unplug and unwind with a serene camping experience in the Andes mountains.",
+        "adventureCost": 1100,
+        "bookingAvailability": true,
+        "location": "Peru",
+        "duration": "3 days",
+        "adventureLevel": "Beginner",
+        "includedItems": [
+            "Camping Tent",
+            "Cooking Supplies",
+            "Meals",
+            "Guide"
+        ],
+        "ecoFriendlyFeatures": [
+            "Leave No Trace",
+            "Solar-Powered Gadgets",
+            "Composting Toilets"
+        ],
+        "maxGroupSize": 8,
+        "specialInstructions": [
+            "Carry your own reusable utensils.",
+            "Minimize noise to protect the tranquility of the area.",
+            "No campfires allowed to prevent wildfires."
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Borneo Jungle Survival Expedition",
+        "image": "https://i.ibb.co.com/6rr6G3F/borneo-jungle-survival-expedition.jpg",
+        "category": "Forest Expeditions",
+        "shortDescription": "Challenge yourself with a survival expedition deep in the Borneo jungle, led by experts.",
+        "adventureCost": 2000,
+        "bookingAvailability": true,
+        "location": "Borneo, Malaysia",
+        "duration": "8 days",
+        "adventureLevel": "Advanced",
+        "includedItems": [
+            "Survival Gear",
+            "Meals",
+            "Expert Guides",
+            "Shelter Building Kit"
+        ],
+        "ecoFriendlyFeatures": [
+            "Biodegradable Supplies",
+            "Sustainable Food Sourcing",
+            "Support Local Tribes"
+        ],
+        "maxGroupSize": 6,
+        "specialInstructions": [
+            "Be prepared for intense physical challenges.",
+            "Carry insect repellent.",
+            "No plastic allowed during the expedition."
+        ]
+    }
+]
