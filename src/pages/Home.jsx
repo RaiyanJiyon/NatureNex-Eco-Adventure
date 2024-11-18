@@ -1,7 +1,11 @@
+import Banner from "../components/home/Banner";
+
 const Home = () => {
     return (
-        <div>
-            <h1>Home Page</h1>
+        <div className="w-11/12 mx-auto">
+            <div className="mt-4">
+                <Banner />
+            </div>
         </div>
     );
 };
