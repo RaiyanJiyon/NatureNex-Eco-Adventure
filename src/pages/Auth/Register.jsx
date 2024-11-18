@@ -13,7 +13,7 @@ const Register = () => {
     const { signUpUser, loading, setLoading } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    const handleRegisterForm = (e) => {
+    const handleRegisterForm = e => {
         e.preventDefault();
         const form = e.currentTarget;
         const formData = new FormData(form);
@@ -104,7 +104,7 @@ const Register = () => {
 
                         <div className="flex items-center justify-center my-6">
                             <div className="flex-grow border-t border-gray-300"></div>
-                            <span className="px-4 text-gray-500">Login with social accounts</span>
+                            <span className="px-4 text-gray-500">Register with social accounts</span>
                             <div className="flex-grow border-t border-gray-300"></div>
                         </div>
 
@@ -112,8 +112,6 @@ const Register = () => {
                             <FaGoogle className="text-2xl cursor-pointer" />
                             <FaGithub className="text-2xl cursor-pointer" />
                         </div>
-
-
 
                         <p className="text-center mt-8">Already Have An Account ? <Link to={"/auth/login"} end className="text-[#4F95FF]">Login</Link></p>
                     </form>
