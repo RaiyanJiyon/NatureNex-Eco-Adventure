@@ -1,5 +1,5 @@
 // Import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
+import { Navigation, A11y, Autoplay } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -13,12 +13,10 @@ const Banner = () => {
     return (
         <div>
             <Swiper className='absolute'
-                modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+                modules={[Navigation, A11y, Autoplay]}
                 spaceBetween={50}
                 slidesPerView={1}
                 navigation
-                pagination={{ clickable: true }}
-                scrollbar={{ draggable: true }}
                 autoplay={{ delay: 3000 }}
             >
                 <SwiperSlide>

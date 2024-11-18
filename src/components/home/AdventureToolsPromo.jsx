@@ -2,10 +2,10 @@ import logo from "../../assets/logo.png";
 
 const AdventureToolsPromo = () => {
     return (
-        <div className="flex flex-col md:flex-row md:h-[500px] border border-gray-200 rounded-lg shadow-lg overflow-hidden">
+        <div className="flex flex-col md:flex-row md:h-[500px] border border-gray-200 rounded-2xl shadow-lg overflow-hidden">
             {/* Image Section */}
             <div className="w-full md:w-1/2 h-full">
-                <img className="w-full h-full object-cover" src="https://i.ibb.co/x6y6KDm/promo.jpg" alt="walkable people" />
+                <img className="w-full h-full object-fill" src="https://i.ibb.co.com/VMC3cYY/tracking.jpg" alt="walkable people" />
             </div>
             {/* Text Section */}
             <div className="w-full md:w-1/2 bg-[#4F95FF] text-white flex flex-col justify-center">
