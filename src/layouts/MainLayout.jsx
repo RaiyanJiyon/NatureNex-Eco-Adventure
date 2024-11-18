@@ -5,7 +5,7 @@ import Footer from "../components/shared/Footer";
 const MainLayout = () => {
     return (
         <div className="font-poppins">
-            <div className="w-11/12 mx-auto mt-4">
+            <div className="w-11/12 mx-auto mt-4 pb-4 sticky z-10 top-0">
                 <Navbar />
             </div>
             <div className="min-h-[calc(100vh-450px)]">
