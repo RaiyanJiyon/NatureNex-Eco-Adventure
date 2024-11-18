@@ -26,7 +26,7 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button className="btn bg-[#403F3F] text-white font-bold">Login</button>
                         </div>
-                        <p className="text-center mt-8">Don&apos;t Have An Account ? <Link to={"/register"} className="text-[#F75B5F]">Register</Link></p>
+                        <p className="text-center mt-8">Don&apos;t Have An Account ? <Link to={"/auth/register"} end className="text-[#F75B5F]">Register</Link></p>
                     </form>
                 </div>
             </div>
