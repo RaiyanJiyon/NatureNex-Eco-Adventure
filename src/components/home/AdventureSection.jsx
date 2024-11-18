@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const AdventureSection = () => {
     const [adventures, setAdventures] = useState([]);
@@ -21,7 +22,6 @@ const AdventureSection = () => {
         fetchAdventures();
     }, [])
 
-    console.log(adventures);
 
     return (
         <div>
@@ -47,9 +47,9 @@ const AdventureSection = () => {
                                     }
                                 </div>
                                 <div className="divider"></div>
-                                <div className="card-actions w-full">
+                                <Link to={`/adventure-details/${adventure.id}`} className="card-actions w-full">
                                     <button className="btn bg-[#4F95FF] text-white">Explore Now</button>
-                                </div>
+                                </Link>
                             </div>
                         </div>
                     ))

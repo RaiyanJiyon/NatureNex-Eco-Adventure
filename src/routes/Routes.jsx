@@ -8,6 +8,7 @@ import ForgotPassword from "../pages/Auth/ForgotPassword";
 // import PrivateRoute from "./PrivateRoute";
 import Profile from "../pages/Profile/Profile";
 import UpdateProfile from "../pages/Profile/UpdateProfile";
+import AdventureDetails from "../pages/Adventure/AdventureDetails";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +19,11 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />
+            },
+            {
+                path: '/adventure-details/:id',
+                element: <AdventureDetails />,
+                loader: () => fetch('/eco-adventures.json')
             },
             {
                 path: '/auth',
