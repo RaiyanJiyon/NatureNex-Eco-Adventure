@@ -1,7 +1,33 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png"
+import { useContext } from "react";
+import { authContext } from "../../contexts/AuthProvider";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
+    const { user, logOut } = useContext(authContext);
+    console.log(user);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                toast.success("You have successfully logged out", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    zIndex: 9999,
+                });
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
+    }
+
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -43,9 +69,17 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to={"/auth/login"}>
-                    <button className="btn">Login</button>
-                </Link>
+                {
+                    user ?
+                        <Link to={"/auth/login"}>
+                            <button onClick={handleLogOut} className="btn">Logout</button>
+                        </Link>
+                        :
+                        <Link to={"/auth/login"}>
+                            <button className="btn">Login</button>
+                        </Link>
+                }
+
             </div>
         </div>
     );
