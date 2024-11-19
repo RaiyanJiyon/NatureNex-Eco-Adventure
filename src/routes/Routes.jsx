@@ -9,6 +9,7 @@ import ForgotPassword from "../pages/Auth/ForgotPassword";
 import Profile from "../pages/Profile/Profile";
 import UpdateProfile from "../pages/Profile/UpdateProfile";
 import AdventureDetails from "../pages/Adventure/AdventureDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/adventure-details/:id',
-                element: <AdventureDetails />,
+                element: <PrivateRoute><AdventureDetails /></PrivateRoute>,
                 loader: () => fetch('/eco-adventures.json')
             },
             {

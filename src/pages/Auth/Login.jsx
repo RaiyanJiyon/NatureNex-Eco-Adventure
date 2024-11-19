@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { FaApple, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authContext } from "../../contexts/AuthProvider";
 import { toast } from "react-toastify";
 
@@ -11,6 +11,9 @@ const Login = () => {
 
 
     const { logIn } = useContext(authContext);
+
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const handleLogInForm = (e) => {
         e.preventDefault();
@@ -35,6 +38,7 @@ const Login = () => {
                     theme: "light",
                     zIndex: 9999,
                 });
+                navigate(location?.state ? location.state : "/")
             })
             .catch(error => {
                 console.log(error.message);
