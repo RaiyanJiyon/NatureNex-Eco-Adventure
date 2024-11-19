@@ -31,7 +31,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <Link to={"/"} className="btn btn-ghost text-xl flex items-center gap-4">
-                    <img src={logo} alt="logo" />
+                    <img className="hidden sm:flex" src={logo} alt="logo" />
                     <span className="text-xl">NatureNex</span>
                 </Link>
             </div>
