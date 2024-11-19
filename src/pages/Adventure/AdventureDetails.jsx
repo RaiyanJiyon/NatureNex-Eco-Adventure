@@ -5,7 +5,7 @@ import useTitles from "../../hooks/useTitles";
 
 const AdventureDetails = () => {
     useTitles();
-    
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -22,8 +22,8 @@ const AdventureDetails = () => {
             <div className='bg-[#f7f7f7] pb-24'>
                 {/* heading div */}
                 <div className='bg-[#4F95FF]'>
-                    <h2 className='text-3xl font-bold text-white pt-8 text-center'>Adventure Details</h2>
-                    <p className='w-3/4 mx-auto text-sm font-light text-white mt-2 pb-40 text-center'>Discover the future of adventure with us—where excitement meets eco-consciousness!</p>
+                    <h2 data-aos="fade-down" className='text-3xl font-bold text-white pt-8 text-center'>Adventure Details</h2>
+                    <p data-aos="fade-right" className='w-3/4 mx-auto text-sm font-light text-white mt-2 pb-40 text-center'>Discover the future of adventure with us—where excitement meets eco-consciousness!</p>
                 </div>
 
                 {/* details div */}
@@ -31,7 +31,7 @@ const AdventureDetails = () => {
                     <div className='space-y-4 w-full md:w-11/12 rounded-xl'>
                         <img className="w-full h-60 md:h-[550px] rounded-xl shadow-lg object-fill" src={filteredAdventure.image} alt={`${filteredAdventure.title}`} />
                     </div>
-                    <div className='space-y-4 w-11/12 mx-auto mt-8'>
+                    <div data-aos="fade-right" className='space-y-4 w-11/12 mx-auto mt-8'>
                         <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0 mb-4">
                             <h2 className='text-2xl font-bold'>{filteredAdventure.title}</h2>
                             <button className="btn bg-[#4F95FF] text-white rounded-lg shadow-md px-4 py-2">{filteredAdventure.category}</button>

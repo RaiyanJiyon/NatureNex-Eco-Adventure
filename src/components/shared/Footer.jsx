@@ -4,14 +4,14 @@ const Footer = () => {
     return (
         <footer className='pb-10'>
             <div className='w-11/12 mx-auto mt-20'>
-                <div>
+                <div data-aos="fade-down">
                     <h2 className='text-3xl font-bold text-center'>NatureNex</h2>
                     <p className='text-[#09080F99] text-center mt-3'>Experience the difference with our travel agency. Unlock your wanderlust with us. Explore beyond boundaries.</p>
                 </div>
 
                 <div className='divider'></div>
 
-                <div className='grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:w-4/5 mx-auto'>
+                <div data-aos="fade-up" className='grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:w-4/5 mx-auto'>
                     <nav className='flex flex-col text-[#09080F99]'>
                         <h6 className="text-[#09080F] text-lg font-bold">Services</h6>
                         <a className="link link-hover text-sm pt-2">Product Support</a>

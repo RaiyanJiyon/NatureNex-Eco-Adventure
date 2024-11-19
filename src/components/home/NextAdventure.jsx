@@ -15,12 +15,12 @@ import 'swiper/css/scrollbar';
 const NextAdventure = () => {
     return (
         <div>
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div data-aos="fade-right" className="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div className="space-y-3">
                     <h2 className="text-3xl font-medium">Share your next adventure</h2>
                     <p className="text-sm">Show us how you <span className="font-bold">#GetOutThere</span> by tagging us <span className="font-bold">@NatureNex</span> for a chance to be featured!</p>
                 </div>
-                <div className="flex md:justify-end items-center gap-4 sm:pl-4 md:pl-0 w-full md:w-1/2">
+                <div data-aos="fade-left" className="flex md:justify-end items-center gap-4 sm:pl-4 md:pl-0 w-full md:w-1/2">
                     <FaInstagram className="text-3xl cursor-pointer" />
                     <FaTiktok className="text-3xl cursor-pointer" />
                     <FaFacebook className="text-3xl cursor-pointer" />

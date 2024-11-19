@@ -4,11 +4,11 @@ const AdventureToolsPromo = () => {
     return (
         <div className="flex flex-col md:flex-row md:h-[500px] border border-gray-200 rounded-2xl shadow-lg overflow-hidden">
             {/* Image Section */}
-            <div className="w-full md:w-1/2 h-full">
+            <div data-aos="fade-right" className="w-full md:w-1/2 h-full">
                 <img className="w-full h-full object-fill" src="https://i.ibb.co.com/VMC3cYY/tracking.jpg" alt="walkable people" />
             </div>
             {/* Text Section */}
-            <div className="w-full md:w-1/2 bg-[#4F95FF] text-white flex flex-col justify-center">
+            <div data-aos="fade-left" className="w-full md:w-1/2 bg-[#4F95FF] text-white flex flex-col justify-center">
                 <div className="space-y-4 flex flex-col w-4/5 mx-auto py-8 md:py-0">
                     <div className="flex items-center gap-3">
                         <img src={logo} alt="logo" className="w-10 h-10" />
