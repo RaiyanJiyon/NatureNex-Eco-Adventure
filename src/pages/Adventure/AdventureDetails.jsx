@@ -26,7 +26,7 @@ const AdventureDetails = () => {
                 {/* details div */}
                 <div className="w-11/12 mx-auto flex flex-col justify-center items-center bg-white rounded-3xl shadow-lg -mt-32 p-8">
                     <div className='space-y-4 w-full md:w-11/12 rounded-xl'>
-                        <img className="w-full h-60 md:h-[700px] rounded-xl shadow-lg object-fill" src={filteredAdventure.image} alt={`${filteredAdventure.title}`} />
+                        <img className="w-full h-60 md:h-[550px] rounded-xl shadow-lg object-fill" src={filteredAdventure.image} alt={`${filteredAdventure.title}`} />
                     </div>
                     <div className='space-y-4 w-11/12 mx-auto mt-8'>
                         <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0 mb-4">

@@ -9,7 +9,7 @@ const Register = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    const { createUser } = useContext(authContext);
+    const { createUser, createGoogleAccount } = useContext(authContext);
     const [terms, setTerms] = useState(false);
 
     const navigate = useNavigate();
@@ -90,6 +90,30 @@ const Register = () => {
             });
     };
 
+    const handleGoogleSignUp = (e) => {
+        e.preventDefault();
+
+        createGoogleAccount()
+            .then(userCredential => {
+                console.log(userCredential.user);
+                toast.success("You have successfully signed up with your google account", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    zIndex: 9999,
+                });
+                navigate("/");
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
+    }
+
     return (
         <section className="bg-gray-50 dark:bg-gray-900">
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto  lg:py-0">
@@ -99,7 +123,7 @@ const Register = () => {
                             Create an account
                         </h1>
                         <div className="flex flex-col md:flex-row items-center justify-between gap-2">
-                            <div className="flex items-center md:justify-between gap-2 w-full border border-gray-300 px-4 py-2 rounded-lg cursor-pointer">
+                            <div onClick={handleGoogleSignUp} className="flex items-center md:justify-between gap-2 w-full border border-gray-300 px-4 py-2 rounded-lg cursor-pointer">
                                 <FaGoogle />
                                 <span className="text-sm font-medium">Log in with Google</span>
                             </div>

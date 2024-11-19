@@ -10,7 +10,7 @@ const Login = () => {
     }, []);
 
 
-    const { logIn } = useContext(authContext);
+    const { logIn, createGoogleAccount } = useContext(authContext);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -38,7 +38,7 @@ const Login = () => {
                     theme: "light",
                     zIndex: 9999,
                 });
-                navigate(location?.state ? location.state : "/")
+                navigate(location?.state ? location.state : "/");
             })
             .catch(error => {
                 console.log(error.message);
@@ -53,7 +53,31 @@ const Login = () => {
                     theme: "light",
                     zIndex: 9999,
                 });
+            });
+    };
+
+    const handleGoogleLogIn = (e) => {
+        e.preventDefault();
+
+        createGoogleAccount()
+            .then(userCredential => {
+                console.log(userCredential.user);
+                toast.success("You have successfully logged in with your google account", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    zIndex: 9999,
+                });
+                navigate(location?.state ? location.state : "/");
             })
+            .catch(error => {
+                console.error(error.message);
+            });
     };
 
 
@@ -66,7 +90,7 @@ const Login = () => {
                             Sign in to your account
                         </h1>
                         <div className="flex flex-col md:flex-row items-center justify-between gap-2">
-                            <div className="flex items-center md:justify-between gap-2 w-full border border-gray-300 px-4 py-2 rounded-lg cursor-pointer">
+                            <div onClick={handleGoogleLogIn} className="flex items-center md:justify-between gap-2 w-full border border-gray-300 px-4 py-2 rounded-lg cursor-pointer">
                                 <FaGoogle />
                                 <span className="text-sm font-medium">Log in with Google</span>
                             </div>
