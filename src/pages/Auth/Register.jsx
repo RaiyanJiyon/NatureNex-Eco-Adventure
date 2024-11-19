@@ -61,7 +61,7 @@ const Register = () => {
         createUser(email, password)
             .then(userCredential => {
                 console.log(userCredential.user);
-                toast.success("You have successfully signed in", {
+                toast.success("You have successfully signed up", {
                     position: "top-right",
                     autoClose: 3000,
                     hideProgressBar: false,
