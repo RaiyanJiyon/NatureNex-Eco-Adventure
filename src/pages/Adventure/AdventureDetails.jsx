@@ -1,8 +1,11 @@
 import { useEffect } from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { FaMapMarkerAlt, FaCalendarAlt, FaMountain, FaUsers, FaLeaf, FaClipboardCheck } from "react-icons/fa";
+import useTitles from "../../hooks/useTitles";
 
 const AdventureDetails = () => {
+    useTitles();
+    
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);

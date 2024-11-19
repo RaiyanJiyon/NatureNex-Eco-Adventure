@@ -3,8 +3,11 @@ import { FaApple, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authContext } from "../../contexts/AuthProvider";
 import { toast } from "react-toastify";
+import useTitles from "../../hooks/useTitles";
 
 const Login = () => {
+    useTitles();
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
