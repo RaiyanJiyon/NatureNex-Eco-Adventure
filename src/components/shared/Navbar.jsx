@@ -1,12 +1,30 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png"
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { authContext } from "../../contexts/AuthProvider";
 import { toast } from "react-toastify";
+import { FaRegUser } from "react-icons/fa";
+import { getAuth } from "firebase/auth";
 
 const Navbar = () => {
     const { user, logOut } = useContext(authContext);
     console.log(user);
+
+    const [profileUser, setProfileUser] = useState(null);
+
+    useEffect(() => {
+        const auth = getAuth();
+        const currentUser = auth.currentUser;
+
+        if (currentUser) {
+            setProfileUser({
+                name: currentUser.displayName || "",
+                image: currentUser.photoURL || ""
+            })
+        }
+
+    }, [])
+
 
     const handleLogOut = () => {
         logOut()
@@ -71,12 +89,25 @@ const Navbar = () => {
             <div className="navbar-end">
                 {
                     user ?
-                        <Link to={"/auth/login"}>
-                            <button onClick={handleLogOut} className="btn">Logout</button>
-                        </Link>
+                        <>
+                            <div className={`avatar ${profileUser && `hover:${profileUser.name}`}`}>
+                                <div className="w-12 rounded-full mr-2 cursor-pointer">
+                                    <img src={profileUser ? profileUser.image : ""} />
+                                </div>
+                            </div>
+                            <Link to={"/auth/login"}>
+                                <button onClick={handleLogOut} className="btn bg-white border border-black text-black font-medium px-8 py-4 rounded-3xl">
+                                    <FaRegUser />
+                                    Logout
+                                </button>
+                            </Link>
+                        </>
                         :
                         <Link to={"/auth/login"}>
-                            <button className="btn">Login</button>
+                            <button className="btn bg-white border border-black text-black font-medium px-8 py-4 rounded-3xl">
+                                <FaRegUser />
+                                Login
+                            </button>
                         </Link>
                 }
             </div>
