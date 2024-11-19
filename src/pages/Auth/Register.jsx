@@ -1,11 +1,94 @@
-import { useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaApple, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { authContext } from "../../contexts/AuthProvider";
+import { toast } from "react-toastify";
 
 const Register = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    const { createUser } = useContext(authContext);
+    const [terms, setTerms] = useState(false);
+
+    const navigate = useNavigate();
+
+    const handleRegisterForm = (e) => {
+        e.preventDefault();
+
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+        const name = formData.get("name");
+        const photoURL = formData.get("photoURL");
+        const email = formData.get("email");
+        const password = formData.get("password");
+
+        console.log(name, photoURL, email, password, terms);
+
+        const validPassword = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+
+        if (!validPassword.test(password)) {
+            toast.error("Password must have at least 6 characters, include an uppercase and a lowercase letter.", {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                zIndex: 9999,
+            });
+            return;
+        };
+
+        if (!terms) {
+            toast.warn("Please accept terms & conditions", {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                zIndex: 9999,
+            });
+            return;
+        }
+
+        createUser(email, password)
+            .then(userCredential => {
+                console.log(userCredential.user);
+                toast.success("You have successfully signed in", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    zIndex: 9999,
+                });
+                navigate("/");
+            })
+            .catch(error => {
+                console.log(error.message);
+                toast.error("The email has already been taken.", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    zIndex: 9999,
+                });
+            });
+    };
 
     return (
         <section className="bg-gray-50 dark:bg-gray-900">
@@ -30,7 +113,7 @@ const Register = () => {
                             <span className="px-4 text-gray-500">Or</span>
                             <div className="flex-grow border-t border-gray-300"></div>
                         </div>
-                        <form className="space-y-4 md:space-y-6">
+                        <form onSubmit={handleRegisterForm} className="space-y-4 md:space-y-6">
                             <div>
                                 <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your name</label>
                                 <input type="text" name="name" id="name" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Name" required />
@@ -50,10 +133,21 @@ const Register = () => {
                             <div className="flex items-center justify-between">
                                 <div className="flex items-start">
                                     <div className="flex items-center h-5">
-                                        <input id="remember" aria-describedby="remember" type="checkbox" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" />
+                                        <input
+                                            id="terms"
+                                            name="terms"
+                                            aria-describedby="terms"
+                                            type="checkbox"
+                                            checked={terms}
+                                            onChange={(e) => setTerms(e.target.checked)}
+                                            className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" />
                                     </div>
                                     <div className="ml-3 text-sm">
-                                        <label htmlFor="remember" className="text-gray-500 dark:text-gray-300">I accept the <span className="text-[#4F95FF] font-medium">Terms and Conditions</span></label>
+                                        <label
+                                            htmlFor="terms"
+                                            className="text-gray-500 dark:text-gray-300">
+                                            I accept the <span className="text-[#4F95FF] font-medium">Terms and Conditions</span>
+                                        </label>
                                     </div>
                                 </div>
                             </div>
