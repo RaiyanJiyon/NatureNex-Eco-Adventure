@@ -4,10 +4,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../../contexts/AuthProvider";
 import { toast } from "react-toastify";
 import useTitles from "../../hooks/useTitles";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
     useTitles();
-    
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -63,6 +64,19 @@ const Register = () => {
 
         createUser(email, password)
             .then(userCredential => {
+                const user = userCredential.user;
+
+                updateProfile(user, {
+                    displayName: name,
+                    photoURL: photoURL
+                })
+                    .then(() => {
+                        console.log("User profile updated successfully");
+                    })
+                    .catch((error) => {
+                        console.error("Error updating user profile:", error);
+                    });
+
                 console.log(userCredential.user);
                 toast.success("You have successfully signed up", {
                     position: "top-right",
