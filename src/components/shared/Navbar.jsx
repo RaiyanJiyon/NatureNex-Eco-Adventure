@@ -90,7 +90,7 @@ const Navbar = () => {
                 {
                     user ?
                         <>
-                            <div className={`avatar ${profileUser && `hover:${profileUser.name}`}`}>
+                            <div className={`hidden sm:flex avatar ${profileUser && `hover:${profileUser.name}`}`}>
                                 <div className="w-12 rounded-full mr-2 cursor-pointer">
                                     <img src={profileUser ? profileUser.image : ""} />
                                 </div>

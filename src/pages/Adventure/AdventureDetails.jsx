@@ -32,14 +32,14 @@ const AdventureDetails = () => {
                         <img className="w-full h-60 md:h-[550px] rounded-xl shadow-lg object-fill" src={filteredAdventure.image} alt={`${filteredAdventure.title}`} />
                     </div>
                     <div data-aos="fade-right" className='space-y-4 w-11/12 mx-auto mt-8'>
-                        <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0 mb-4">
-                            <h2 className='text-2xl font-bold'>{filteredAdventure.title}</h2>
+                        <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 md:gap-0 mb-4">
+                            <h2 className='text-2xl font-bold w-full'>{filteredAdventure.title}</h2>
                             <button className="btn bg-[#4F95FF] text-white rounded-lg shadow-md px-4 py-2">{filteredAdventure.category}</button>
                         </div>
 
                         <p className='text-[#333] text-justify'>{filteredAdventure.shortDescription}</p>
 
-                        <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0 py-4">
+                        <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 md:gap-0 py-4">
                             <h3 className='text-lg font-semibold text-[#09080FCC]'>Adventure Cost: {filteredAdventure.adventureCost}</h3>
                             <button className={`${filteredAdventure.bookingAvailability ? "btn btn-sm btn-outline bg-[#309C081A] text-[#309C08] text-sm font-medium rounded-[32px] shadow-md" : "btn btn-sm btn-outline bg-[#f136361a] text-[#e43939] text-sm font-medium rounded-[32px] shadow-md"}`}>
                                 {filteredAdventure.bookingAvailability ? "Booking Available" : "Booking Unavailable"}
