@@ -83,7 +83,7 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal px-1 items-center gap-6">
                     <NavLink to={"/"} className={({ isActive }) => isActive ? "font-medium bg-black text-white rounded-lg p-2" : "text-black"}>Home</NavLink>
                     <NavLink to={"/profile/update"} end className={({ isActive }) => isActive ? "font-medium bg-black text-white rounded-lg p-2" : "text-black"}>Update Profile</NavLink>
-                    <NavLink to={"/profile"} end className={({ isActive }) => isActive ? "font-medium bg-black text-white rounded-lg p-2" : "text-black"}>User Profile</NavLink>
+                    <NavLink to={"/profile"} end className={({ isActive }) => isActive ? "font-medium bg-black text-white rounded-lg p-2" : "text-black"}>{`${user ? 'My Profile' : 'User Profile'}`}</NavLink>
                 </ul>
             </div>
             <div className="navbar-end">
