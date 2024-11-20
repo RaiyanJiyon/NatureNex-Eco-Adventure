@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png"
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { authContext } from "../../contexts/AuthProvider";
 import { toast } from "react-toastify";
 import { FaRegUser } from "react-icons/fa";
@@ -9,6 +9,8 @@ import { FaRegUser } from "react-icons/fa";
 const Navbar = () => {
     const { user, logOut } = useContext(authContext);
     console.log(user);
+    const [isHovered, setIsHovered] = useState(false);
+
 
     const handleLogOut = () => {
         logOut()
@@ -74,7 +76,11 @@ const Navbar = () => {
                 {
                     user ?
                         <>
-                            <div className={`hidden sm:flex avatar ${user && `hover:${user.displayName}`}`}>
+                            <div
+                                className="relative hidden sm:flex avatar"
+                                onMouseEnter={() => setIsHovered(true)}
+                                onMouseLeave={() => setIsHovered(false)}
+                            >
                                 <div className="w-12 rounded-full mr-2 cursor-pointer">
                                     {user ? (
                                         <img src={user.photoURL} />
@@ -82,6 +88,13 @@ const Navbar = () => {
                                         <img src="https://via.placeholder.com/150" alt="Placeholder" />
                                     )}
                                 </div>
+
+                                {
+                                    isHovered && user && (
+                                        <div className="absolute right-14 p-2 bg-gray-800 text-white rounded-lg shadow-lg z-10"> {user.displayName} </div>
+                                    )
+
+                                }
                             </div>
                             <Link to={"/auth/login"}>
                                 <button onClick={handleLogOut} className="btn bg-white border border-black text-black font-medium md:px-8 py-4 rounded-3xl">

@@ -2,11 +2,14 @@ import { useContext } from "react";
 import useTitles from "../../hooks/useTitles";
 import { authContext } from "../../contexts/AuthProvider";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const UpdateProfile = () => {
     useTitles();
 
-    const { updateUserProfile } = useContext(authContext);
+    const { setUser, updateUserProfile } = useContext(authContext);
+
+    const navigate = useNavigate();
 
     const handleUpdateProfileForm = (e) => {
         e.preventDefault();
@@ -21,6 +24,10 @@ const UpdateProfile = () => {
 
         updateUserProfile(name, photoURL)
             .then(() => {
+                setUser(prev => {
+                    return {...prev, displayName: name, photoURL: photoURL}
+                });
+
                 toast.success("Profile Updated", {
                     position: "top-right",
                     autoClose: 3000,
@@ -33,6 +40,8 @@ const UpdateProfile = () => {
                     zIndex: 9999,
                 });
                 form.reset();
+                navigate("/profile")
+
             })
             .catch(error => {
                 console.log(error.message);

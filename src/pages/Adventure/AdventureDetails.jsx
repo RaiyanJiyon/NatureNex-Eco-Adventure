@@ -1,11 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { FaMapMarkerAlt, FaCalendarAlt, FaMountain, FaUsers, FaLeaf, FaClipboardCheck } from "react-icons/fa";
 import useTitles from "../../hooks/useTitles";
 import moment from "moment";
-import Modal from 'react-modal';
-
-Modal.setAppElement('#root');
 
 const AdventureDetails = () => {
     useTitles();
@@ -13,8 +10,6 @@ const AdventureDetails = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-
-    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const { id } = useParams();
     const adventureId = parseInt(id);
@@ -31,12 +26,8 @@ const AdventureDetails = () => {
         if (currentTime.isBetween(startTime, endTime)) {
             window.open('https://meet.google.com/nzb-hsfo-fvj');
         } else {
-            setIsModalOpen(true);
+            alert("Close");
         };
-    };
-
-    const closeModal = () => {
-        setIsModalOpen(false);
     };
 
     return (
@@ -103,22 +94,10 @@ const AdventureDetails = () => {
                         </div>
 
                         <button onClick={handleExpertButton} className="btn bg-[#4F95FF] text-white rounded-lg shadow-md px-4 py-2">Talk with Expert</button>
-
-                        <Modal
-                            isOpen={isModalOpen}
-                            onRequestClose={closeModal}
-                            contentLabel="Consultation Time"
-                            className="modal-class"
-                            overlayClassName="modal-overlay-class"
-                        >
-                            <h2 className="text-2xl font-medium text-center">Consultation Time</h2>
-                            <p className="text-sm text-center">Our experts are available between 10:00 AM and 8:00 PM. Please try again during these hours.</p>
-                            <button onClick={closeModal}>Close</button>
-                        </Modal>
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
