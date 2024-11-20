@@ -1,30 +1,14 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png"
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { authContext } from "../../contexts/AuthProvider";
 import { toast } from "react-toastify";
 import { FaRegUser } from "react-icons/fa";
-import { getAuth } from "firebase/auth";
+
 
 const Navbar = () => {
     const { user, logOut } = useContext(authContext);
     console.log(user);
-
-    const [profileUser, setProfileUser] = useState(null);
-
-    useEffect(() => {
-        const auth = getAuth();
-        const currentUser = auth.currentUser;
-
-        if (currentUser) {
-            setProfileUser({
-                name: currentUser.displayName || "",
-                image: currentUser.photoURL || ""
-            })
-        }
-
-    }, [])
-
 
     const handleLogOut = () => {
         logOut()
@@ -43,8 +27,8 @@ const Navbar = () => {
             })
             .catch(error => {
                 console.log(error.message);
-            })
-    }
+            });
+    };
 
     return (
         <div className="navbar bg-base-100">
@@ -90,9 +74,13 @@ const Navbar = () => {
                 {
                     user ?
                         <>
-                            <div className={`hidden sm:flex avatar ${profileUser && `hover:${profileUser.name}`}`}>
+                            <div className={`hidden sm:flex avatar ${user && `hover:${user.displayName}`}`}>
                                 <div className="w-12 rounded-full mr-2 cursor-pointer">
-                                    <img src={profileUser ? profileUser.image : ""} />
+                                    {user ? (
+                                        <img src={user.photoURL} />
+                                    ) : (
+                                        <img src="https://via.placeholder.com/150" alt="Placeholder" />
+                                    )}
                                 </div>
                             </div>
                             <Link to={"/auth/login"}>

@@ -71,10 +71,30 @@ const Register = () => {
                     photoURL: photoURL
                 })
                     .then(() => {
-                        console.log("User profile updated successfully");
+                        toast.success("User profile updated successfully", {
+                            position: "top-right",
+                            autoClose: 3000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "light",
+                            zIndex: 9999,
+                        });
                     })
                     .catch((error) => {
-                        console.error("Error updating user profile:", error);
+                        toast.error("Error updating user profile", {
+                            position: "top-right",
+                            autoClose: 3000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "light",
+                            zIndex: 9999,
+                        });
                     });
 
                 console.log(userCredential.user);
