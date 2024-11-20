@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 const Footer = () => {
     return (
         <footer className='pb-10'>
-            <div className='w-11/12 mx-auto mt-20'>
+            <div className='w-11/12 mx-auto mt-8 md:mt-20'>
                 <div data-aos="fade-down">
-                    <h2 className='text-3xl font-bold text-center'>NatureNex</h2>
-                    <p className='text-[#09080F99] text-center mt-3'>Experience the difference with our travel agency. Unlock your wanderlust with us. Explore beyond boundaries.</p>
+                    <h2 className='text-3xl font-bold md:text-center'>NatureNex</h2>
+                    <p className='text-[#09080F99] md:text-center mt-3'>Experience the difference with our travel agency. Unlock your wanderlust with us. Explore beyond boundaries.</p>
                 </div>
 
                 <div className='divider'></div>

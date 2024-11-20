@@ -96,7 +96,7 @@ const Navbar = () => {
                                 </div>
                             </div>
                             <Link to={"/auth/login"}>
-                                <button onClick={handleLogOut} className="btn bg-white border border-black text-black font-medium px-8 py-4 rounded-3xl">
+                                <button onClick={handleLogOut} className="btn bg-white border border-black text-black font-medium md:px-8 py-4 rounded-3xl">
                                     <FaRegUser />
                                     Logout
                                 </button>
@@ -104,7 +104,7 @@ const Navbar = () => {
                         </>
                         :
                         <Link to={"/auth/login"}>
-                            <button className="btn bg-white border border-black text-black font-medium px-8 py-4 rounded-3xl">
+                            <button className="btn bg-white border border-black text-black font-medium md:px-8 py-4 rounded-3xl">
                                 <FaRegUser />
                                 Login
                             </button>
