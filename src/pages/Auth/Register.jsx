@@ -13,7 +13,7 @@ const Register = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    const { createUser, createGoogleAccount } = useContext(authContext);
+    const { createUser, createGoogleAccount, setUser } = useContext(authContext);
     const [terms, setTerms] = useState(false);
 
     const navigate = useNavigate();
@@ -65,6 +65,11 @@ const Register = () => {
         createUser(email, password)
             .then(userCredential => {
                 const user = userCredential.user;
+
+                setUser({...user, 
+                    displayName: name,
+                    photoURL: photoURL
+                })
 
                 updateProfile(user, {
                     displayName: name,
