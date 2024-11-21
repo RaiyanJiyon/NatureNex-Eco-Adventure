@@ -82,6 +82,15 @@ const Login = () => {
             });
     };
 
+    const navigateToForgetPassword = () => {
+        const emailInput = document.getElementById("email");
+        navigate("/auth/forget-password", {
+            state: {
+                email: emailInput.value,
+            }
+        })
+    }
+
     return (
         <section className="bg-gray-50 lg:pt-10 lg:pb-10 xl:pt-0 xl:pb-0">
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
@@ -123,7 +132,7 @@ const Login = () => {
                                         <label htmlFor="remember" className="text-gray-500">Remember me</label>
                                     </div>
                                 </div>
-                                <Link to={"/auth/forget-password"} className="text-sm font-medium text-primary-600 hover:underline">Forgot password?</Link>
+                                <span onClick={navigateToForgetPassword} className="text-sm font-medium text-primary-600 hover:underline">Forgot password?</span>
                             </div>
                             <button type="submit" className="w-full text-white bg-[#4F95FF] hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-primary-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center">Login</button>
                             <p className="text-sm font-light text-gray-500">

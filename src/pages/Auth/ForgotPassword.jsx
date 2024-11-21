@@ -1,45 +1,48 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import useTitles from "../../hooks/useTitles";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { authContext } from "../../contexts/AuthProvider";
 import { toast } from "react-toastify";
 
 const ForgotPassword = () => {
     useTitles();
+    const location = useLocation();
+    const [email, setEmail] = useState(location.state?.email || '');
 
     useEffect(() => {
         window.scrollTo(0, 100);
     }, []);
 
-    const {passwordResetEmail} = useContext(authContext);
+    const { passwordResetEmail } = useContext(authContext);
 
     const handleForgetPasswordForm = (e) => {
         e.preventDefault();
 
-        const form = e.currentTarget;
-        const formData = new FormData(form);
-        const email = formData.get("email");
-        console.log(email);
-
         passwordResetEmail(email)
-        .then(() => {
-            toast.success("Password changed successfully!", {
-                position: "top-right",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-                zIndex: 9999,
+            .then(() => {
+                toast.success("Password reset email sent!", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    zIndex: 9999,
+                });
+                
+                window.open('https://mail.google.com', '_blank');
+            })
+            .catch(error => {
+                console.log(error.message);
+                console.log(error.code);
+                toast.error("Failed to send password reset email", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    theme: "light",
+                });
             });
-            form.reset();
-        })
-        .catch(error => {
-            console.log(error.message);
-            console.log(error.code);
-        });
     };
 
     return (
@@ -54,9 +57,23 @@ const ForgotPassword = () => {
                         <form onSubmit={handleForgetPasswordForm} className="space-y-4 md:space-y-6">
                             <div>
                                 <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900">Your email</label>
-                                <input type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="name@company.com" required />
+                                <input 
+                                    type="email" 
+                                    name="email" 
+                                    id="email" 
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" 
+                                    placeholder="name@company.com" 
+                                    required 
+                                />
                             </div>
-                            <button type="submit" className="w-full text-white bg-[#4F95FF] hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-primary-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center">Reset Password</button>
+                            <button 
+                                type="submit" 
+                                className="w-full text-white bg-[#4F95FF] hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-primary-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center"
+                            >
+                                Reset Password
+                            </button>
                         </form>
                     </div>
                 </div>
