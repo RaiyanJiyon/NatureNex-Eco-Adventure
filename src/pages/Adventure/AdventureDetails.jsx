@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { FaMapMarkerAlt, FaCalendarAlt, FaMountain, FaUsers, FaLeaf, FaClipboardCheck } from "react-icons/fa";
 import useTitles from "../../hooks/useTitles";
 import moment from "moment";
+import Modal from "../../components/Modal/Modal";
 
 const AdventureDetails = () => {
     useTitles();
@@ -10,6 +11,8 @@ const AdventureDetails = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const { id } = useParams();
     const adventureId = parseInt(id);
@@ -26,9 +29,13 @@ const AdventureDetails = () => {
         if (currentTime.isBetween(startTime, endTime)) {
             window.open('https://meet.google.com/nzb-hsfo-fvj');
         } else {
-            alert("Close");
+            setIsModalOpen(true);
         };
     };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    }
 
     return (
         <div>
@@ -94,6 +101,11 @@ const AdventureDetails = () => {
                         </div>
 
                         <button onClick={handleExpertButton} className="btn bg-[#4F95FF] text-white rounded-lg shadow-md px-4 py-2">Talk with Expert</button>
+
+                        {
+                            isModalOpen && <Modal isOpen={isModalOpen} closeModal={closeModal} />
+                        }
+
                     </div>
                 </div>
             </div>
