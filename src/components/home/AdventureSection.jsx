@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FaLeaf } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const AdventureSection = () => {
@@ -39,13 +40,17 @@ const AdventureSection = () => {
                             </figure>
                             <div className="card-body items-center">
                                 <h2 className="card-title w-full h-14 pl-2">{adventure.title}</h2>
-                                <div className="grid grid-cols-2 gap-4 w-full mt-2">
-                                    {
-                                        adventure.ecoFriendlyFeatures.map((feature, index) => (
-                                            <button key={index} className="btn btn-tiny text-xs">{feature}</button>
-                                        ))
-                                    }
-                                </div>
+
+                                <ul className="w-full grid grid-cols-2 gap-4">
+                                    {adventure.ecoFriendlyFeatures.map((feature, index) => (
+                                        <li key={index} className="text-xs font-medium p-2 bg-gray-100 border border-gray-300 rounded flex items-center gap-2">
+                                            <FaLeaf className="text-green-500 text-lg" />
+                                            {feature}
+                                        </li>
+                                    ))}
+                                </ul>
+
+
                                 <div className="divider"></div>
                                 <Link to={`/adventure-details/${adventure.id}`} className="card-actions w-full">
                                     <button className="btn bg-[#4F95FF] text-white">Explore Now</button>
