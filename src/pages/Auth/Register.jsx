@@ -164,7 +164,7 @@ const Register = () => {
                                 <FaGoogle />
                                 <span className="text-sm font-medium">Log in with Google</span>
                             </div>
-                            <div className="flex items-center md:justify-between gap-2 w-full border border-gray-300 px-4 py-2 rounded-lg cursor-pointer">
+                            <div className="flex items-center md:justify-between gap-2 w-full border border-gray-300 px-4 py-2 rounded-lg cursor-not-allowed">
                                 <FaApple />
                                 <span className="text-sm font-medium">Log in with Apple</span>
                             </div>
@@ -212,7 +212,7 @@ const Register = () => {
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" className="w-full text-white bg-[#4F95FF] hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-primary-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center">Create an account</button>
+                            <button type="submit" className="w-full text-white bg-[#4F95FF] hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-primary-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center">Register</button>
                             <p className="text-sm font-light text-gray-500">
                                 Already have an account? <Link to={"/auth/login"} className="font-medium text-[#4F95FF] hover:underline">Login here</Link>
                             </p>

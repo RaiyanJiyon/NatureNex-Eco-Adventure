@@ -55,8 +55,8 @@ const Navbar = () => {
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                         <ul className="menu menu-horizontal items-center gap-6 flex flex-col">
                             <NavLink to={"/"} className={({ isActive }) => isActive ? "font-medium bg-black text-white rounded-lg p-2" : "text-black"}>Home</NavLink>
-                            <NavLink to={"/profile/update"} end className={({ isActive }) => isActive ? "font-medium bg-black text-white rounded-lg p-2" : "text-black"}>Update Profile</NavLink>
                             <NavLink to={"/profile"} end className={({ isActive }) => isActive ? "font-medium bg-black text-white rounded-lg p-2" : "text-black"}>User Profile</NavLink>
+                            <NavLink to={"/profile/update"} end className={({ isActive }) => isActive ? "font-medium bg-black text-white rounded-lg p-2" : "text-black"}>Update Profile</NavLink>
                         </ul>
                     </ul>
                 </div>
@@ -68,8 +68,8 @@ const Navbar = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 items-center gap-6">
                     <NavLink to={"/"} className={({ isActive }) => isActive ? "font-medium bg-black text-white rounded-lg p-2" : "text-black"}>Home</NavLink>
-                    <NavLink to={"/profile/update"} end className={({ isActive }) => isActive ? "font-medium bg-black text-white rounded-lg p-2" : "text-black"}>Update Profile</NavLink>
                     <NavLink to={"/profile"} end className={({ isActive }) => isActive ? "font-medium bg-black text-white rounded-lg p-2" : "text-black"}>{`${user ? 'My Profile' : 'User Profile'}`}</NavLink>
+                    <NavLink to={"/profile/update"} end className={({ isActive }) => isActive ? "font-medium bg-black text-white rounded-lg p-2" : "text-black"}>Update Profile</NavLink>
                 </ul>
             </div>
             <div className="navbar-end">

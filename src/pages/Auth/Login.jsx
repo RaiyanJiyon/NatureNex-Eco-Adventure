@@ -95,7 +95,7 @@ const Login = () => {
                                 <FaGoogle />
                                 <span className="text-sm font-medium">Log in with Google</span>
                             </div>
-                            <div className="flex items-center md:justify-between gap-2 w-full border border-gray-300 px-4 py-2 rounded-lg cursor-pointer">
+                            <div className="flex items-center md:justify-between gap-2 w-full border border-gray-300 px-4 py-2 rounded-lg cursor-not-allowed">
                                 <FaApple />
                                 <span className="text-sm font-medium">Log in with Apple</span>
                             </div>
@@ -125,7 +125,7 @@ const Login = () => {
                                 </div>
                                 <Link to={"/auth/forget-password"} className="text-sm font-medium text-primary-600 hover:underline">Forgot password?</Link>
                             </div>
-                            <button type="submit" className="w-full text-white bg-[#4F95FF] hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-primary-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center">Sign in</button>
+                            <button type="submit" className="w-full text-white bg-[#4F95FF] hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-primary-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center">Login</button>
                             <p className="text-sm font-light text-gray-500">
                                 Don’t have an account yet? <Link to={"/auth/register"} className="font-medium text-[#4F95FF] hover:underline">Register</Link>
                             </p>
