@@ -27,10 +27,10 @@ const AdventureSection = () => {
         <div>
             <h1 data-aos="fade-right" className="text-3xl font-bold">Adventure Experiences</h1>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
                 {
                     adventures.map(adventure => (
-                        <div key={adventure.id} className="card bg-base-100 shadow-xl">
+                        <div key={adventure.id} className="group relative card bg-base-100 shadow-xl transition-transform duration-300 ease-in-out transform hover:scale-110">
                             <figure className="px-10 pt-10">
                                 <img
                                     src={adventure.image}
