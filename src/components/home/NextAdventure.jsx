@@ -75,8 +75,6 @@ const NextAdventure = () => {
                         <span className="relative -top-8 md:pl-6 text-xs md:text-sm text-white font-semibold">@britt.venturesout</span>
                     </SwiperSlide>
                 </Swiper>
-
-
             </div>
         </div>
     );

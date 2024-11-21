@@ -35,7 +35,7 @@ const AdventureDetails = () => {
 
     const closeModal = () => {
         setIsModalOpen(false);
-    }
+    };
 
     return (
         <div>

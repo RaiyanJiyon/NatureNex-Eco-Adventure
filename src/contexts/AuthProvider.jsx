@@ -14,7 +14,7 @@ const AuthProvider = ({ children }) => {
     const createGoogleAccount = () => {
         setLoading(true);
         return signInWithPopup(auth, googleProvider);
-    }
+    };
 
     const createUser = (email, password) => {
         setLoading(true);
@@ -36,12 +36,12 @@ const AuthProvider = ({ children }) => {
             displayName: displayName,
             photoURL: photoURL
         });
-    }
+    };
 
     const passwordResetEmail = (email) => {
         setLoading(true);
         return sendPasswordResetEmail(auth, email)
-    }
+    };
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {

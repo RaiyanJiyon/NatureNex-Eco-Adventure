@@ -18,11 +18,10 @@ const AdventureSection = () => {
             } catch (error) {
                 console.error("Error fetching data:", error.message);
                 setError("Failed to load adventures. Please try again later.");
-            }
+            };
         };
         fetchAdventures();
-    }, [])
-
+    }, []);
 
     return (
         <div>
@@ -50,7 +49,6 @@ const AdventureSection = () => {
                                     ))}
                                 </ul>
 
-
                                 <div className="divider"></div>
                                 <Link to={`/adventure-details/${adventure.id}`} className="card-actions w-full">
                                     <button className="btn bg-[#4F95FF] text-white">Explore Now</button>
@@ -58,7 +56,7 @@ const AdventureSection = () => {
                             </div>
                         </div>
                     ))
-                }
+                };
             </div>
         </div>
     );

@@ -5,12 +5,10 @@ import { authContext } from "../../contexts/AuthProvider";
 import { toast } from "react-toastify";
 import { FaRegUser } from "react-icons/fa";
 
-
 const Navbar = () => {
     const { user, logOut } = useContext(authContext);
     console.log(user);
     const [isHovered, setIsHovered] = useState(false);
-
 
     const handleLogOut = () => {
         logOut()

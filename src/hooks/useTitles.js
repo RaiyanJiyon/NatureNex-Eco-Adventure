@@ -31,10 +31,9 @@ const useTitles = () => {
                     title = 'Adventure Details | NatureNex';
                 }
                 break;
-        }
-        
+        };
         document.title = title;
-    }, [location.pathname])
-}
+    }, [location.pathname]);
+};
 
 export default useTitles;
